@@ -1794,7 +1794,7 @@ script1.xhr('GET', '/feeds/posts/default/-/Series?alt=json-in-script&max-results
                     <li class='page-item disabled'><a class='page-link'>&lt; </a></li>
                   </b:if>
                   <li class='page-item'><a class='page-link' expr:href='data:blog.homepageUrl'>
-                    <b:include data='{ icon: &quot;home&quot;, width: &quot;20&quot;, height: &quot;20&quot;, fill: &quot;none&quot; }' name='i:svg'/></a></li>
+                    <b:include data='{ icon: &quot;home&quot;, width: &quot;20&quot;, height: &quot;20&quot;, viewbox: &quot;0 0 20 24&quot; }' name='i:svg'/></a></li>
                   <b:if cond='data:olderPageUrl'>
                     <li class='page-item active'><a class='page-link' expr:href='data:olderPageUrl'> &gt;</a></li>
                     <b:else/>
