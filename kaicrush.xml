@@ -230,7 +230,7 @@ font-style:normal;
     <b:else/>
     <b:template-skin>
     <![CDATA[
-    body#layout{position:relative;width:auto;max-width:100%;background-color:#f9f9f9;padding:95px 5px 0;margin:0}body#layout:before{content:'Streaming Blogger - v1.0.0';position:absolute;top:0;left:5px;right:5px;height:95px;font-family:Roboto,sans-serif;font-size:23px;color:#0F1618;line-height:95px;text-align:center}
+    body#layout{position:relative;width:auto;max-width:100%;background-color:#f9f9f9;padding:95px 5px 0;margin:0}body#layout:before{content:'KaiCrush v1.0.0';position:absolute;top:0;left:5px;right:5px;height:95px;font-family:Roboto,sans-serif;font-size:23px;color:#0F1618;line-height:95px;text-align:center}
 body#layout:after{content:'AniCrush by Kai Haruto (kaitheme)';display:block;font-family:Roboto,sans-serif;font-size:14px;color:#555;line-height:1;text-align:center;visibility:visible;padding:20px 0}
     ]]>
   </b:template-skin>
