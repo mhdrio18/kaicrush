@@ -1859,7 +1859,7 @@ script1.xhr('GET', '/feeds/posts/default/-/Series?alt=json-in-script&max-results
                 <div class='row-base-header'>
     <div class='heading'><h2 class='heading-lg m-0'><data:post.title/></h2></div>
                   <data:post.body/>
-                <b:include data='post' name='jsonScript'/>
+                <b:include data='post' name='postMeta'/>
                   </div>
               </b:includable>
             <b:includable id='platformShare'/>
