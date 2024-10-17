@@ -757,6 +757,7 @@ checkStreamingParam();
     <b:includable id='populer' var='obj'/>
   </b:defaultmarkup>
 </b:defaultmarkups>
+<script src='https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'/>
 </head>
 <b:with value='[&quot;TV&quot;, &quot;BD&quot;, &quot;OVA&quot;, &quot;Movie&quot;, &quot;Special&quot;, &quot;ONA&quot;, &quot;Donghua&quot;]' var='type'>
 <b:with value='[&quot;Action&quot;,&quot;Adventure&quot;,&quot;Avant Garde&quot;,&quot;Award Winning&quot;,&quot;Boys Love&quot;,&quot;Comedy&quot;,&quot;Drama&quot;,&quot;Fantasy&quot;,&quot;Girls Love&quot;,&quot;Gourmet&quot;,&quot;Horror&quot;,&quot;Mystery&quot;,&quot;Romance&quot;,&quot;Sci-Fi&quot;,&quot;Slice of Life&quot;,&quot;Sports&quot;,&quot;Supernatural&quot;,&quot;Suspense&quot;,&quot;Explicit Genres&quot;,&quot;Ecchi&quot;,&quot;Erotica&quot;,&quot;Hentai&quot;,&quot;Themes&quot;,&quot;Adult Cast&quot;,&quot;Anthropomorphic&quot;,&quot;CGDCT&quot;,&quot;Childcare&quot;,&quot;Combat Sports&quot;,&quot;Crossdressing&quot;,&quot;Delinquents&quot;,&quot;Detective&quot;,&quot;Educational&quot;,&quot;Gag Humor&quot;,&quot;Gore&quot;,&quot;Harem&quot;,&quot;High Stakes Game&quot;,&quot;Historical&quot;,&quot;Idols (Female)&quot;]' var='genre1'>
