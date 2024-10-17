@@ -417,13 +417,51 @@ body#layout:after{content:'AniCrush by Kai Haruto (kaitheme)';display:block;font
     <div class='about-anime'>
         <div class='infor'>
             <div class='heading'>
-                <div class='dropdown'>
+              <b:with value='[&quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;,&quot;9&quot;]' var='checkNumber'>
+          <b:if cond='data:post.labels'>
+            <b:loop values='data:post.labels' var='item'>
+              <b:with value='&quot;String: &quot; + data:item.name' var='string'>
+                <b:loop values='data:checkNumber' var='first'>
+                  <b:if cond='data:string contains data:first + &quot;.&quot;'>
+                    <b:loop values='data:checkNumber' var='last'>
+                      <b:if cond='data:string contains &quot;.&quot; + data:last'>
+                        <div class='dropdown'>
                     <div class='score type-button'>
                         <div class='s-head d-none'>SCORE</div>
-                        <div class='s-mark'><data:post.labels.first.name/></div>
+                        <div class='s-mark'><data:item.name/></div>
                         <div class='s-total favorites'><data:post.body.size/> voted</div>
                     </div>
                 </div>
+                        <script type='application/ld+json'>
+                          {
+                          &quot;@context&quot;: &quot;https://schema.org&quot;,
+                          &quot;@type&quot;: &quot;CreativeWorkSeries&quot;,
+                          &quot;url&quot;: &quot;<data:blog.url/>&quot;,
+                          &quot;name&quot;: &quot;<data:blog.pageTitle/>&quot;,
+                          &quot;alternateName&quot;: &quot;<data:blog.pageTitle/>&quot;,
+                          &quot;description&quot;: &quot;<data:blog.metaDescription/>&quot;,
+                          &quot;inLanguage&quot;: &quot;id&quot;,
+                          &quot;aggregateRating&quot;: {
+                          &quot;@type&quot;: &quot;AggregateRating&quot;,
+                          &quot;ratingValue&quot;: &quot;<data:item.name/>&quot;,
+                          &quot;bestRating&quot;: &quot;10&quot;,
+                          &quot;worstRating&quot;: &quot;0&quot;,
+                          &quot;ratingCount&quot;: &quot;<data:post.body.size/>&quot;,
+                          &quot;reviewCount&quot;: &quot;<data:post.body.size/>&quot;
+                          },
+                          &quot;author&quot;: {&quot;@type&quot;: &quot;Person&quot;, &quot;name&quot;: &quot;<data:post.author.name/>&quot;},
+                          &quot;publisher&quot;: {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;<data:blog.title/>&quot;}
+                          }
+                          }
+                        </script>
+                      </b:if>
+                    </b:loop>
+                  </b:if>
+                </b:loop>
+              </b:with>
+            </b:loop>
+          </b:if>
+        </b:with>
                 <div class='main'>
                     <h2 class='heading-md mb-0 text-white'><data:post.title/></h2>
                     <div class='other-items'>
@@ -525,75 +563,7 @@ body#layout:after{content:'AniCrush by Kai Haruto (kaitheme)';display:block;font
       <data:post.body/>
 <script type='text/javascript'>
 //<![CDATA[
-let subCount = 0;
-let dubCount = 0;
-
-if (Array.isArray(episodes) && episodes.length === 0) {
-    const epsElement = document.querySelector('.epsub, .epdub');
-    if (epsElement) {
-        epsElement.remove();
-    }
-} else {
-    episodes.forEach(episode => {
-        let hasSub = false;
-        let hasDub = false;
-
-        episode.servers.forEach(server => {
-            if (server.sub && !hasSub) {
-                hasSub = true;
-            }
-            if (server.dub && !hasDub) {
-                hasDub = true;
-            }
-        });
-
-        if (hasSub) {
-            subCount++;
-        }
-        if (hasDub) {
-            dubCount++;
-        }
-    });
-
-    document.querySelector('.epsub').innerHTML = `
-        <div class="item item-flex item-sub">
-            <div class="sp-icon sp-12 sp-icon-sub"></div>
-            <div class="name">${subCount}</div>
-        </div>`;
-    
-    document.querySelector('.item-dub').innerHTML = `
-        <div class="item item-flex item-dub">
-            <div class="sp-icon sp-12 sp-icon-dub"></div>
-            <div class="name">${dubCount}</div>
-        </div>`;
-}
-
-function moveElement(n, dataKey) {
-    let container = document.querySelector(n);
-    let content = config.eInfo[dataKey] ? config.eInfo[dataKey] : '';
-
-    if (container) {
-        if (n === '.cover' && container.tagName === 'IMG') {
-            container.src = content;
-        } else {
-            container.innerHTML = content;
-        }
-    }
-}
-
-function moveElement2(e, n, t) {
-    let o = document.querySelector(e);
-    let c = document.querySelector(n);
-    
-    if (c) {
-        if (o) {
-            c.innerHTML = o.innerHTML;
-            o.remove();
-        } else {
-            c.innerHTML = t;
-        }
-    }
-}
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('3 i=0;3 j=0;2(F.G(k)&&k.H===0){I l=5.6(\'.s, .J\');2(l){l.u()}}m{k.v(w=>{3 d=x;3 f=x;w.K.v(p=>{2(p.q&&!d){d=y}2(p.g&&!f){f=y}});2(d){i++}2(f){j++}});5.6(\'.s\').7=`<1 8="4 4-z 4-q"><1 8="9-h 9-A 9-h-q"></1><1 8="B">${i}</1></1>`;5.6(\'.4-g\').7=`<1 8="4 4-z 4-g"><1 8="9-h 9-A 9-h-g"></1><1 8="B">${j}</1></1>`}C L(n,a){3 b=5.6(n);3 r=D.E[a]?D.E[a]:\'\';2(b){2(n===\'.M\'&&b.N===\'O\'){b.P=r}m{b.7=r}}}C Q(e,n,t){3 o=5.6(e);3 c=5.6(n);2(c){2(o){c.7=o.7;o.u()}m{c.7=t}}}',53,53,'|div|if|let|item|document|querySelector|innerHTML|class|sp||container||hasSub||hasDub|dub|icon|subCount|dubCount|episodes|epsElement|else|||server|sub|content|epsub||remove|forEach|episode|false|true|flex|12|name|function|config|eInfo|Array|isArray|length|const|epdub|servers|moveElement|cover|tagName|IMG|src|moveElement2'.split('|'),0,{}))
 
 moveElement2('.synopsis', '.description', 'No Synopsis.');
 moveElement('.japanese', 'japanese');
@@ -605,44 +575,6 @@ moveElement('.cover', 'cover');
 //]]>
 </script>
 <b:include data='post' name='postMeta'/>
-<b:with value='[&quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;,&quot;9&quot;]' var='checkNumber'>
-          <b:if cond='data:post.labels'>
-            <b:loop values='data:post.labels' var='item'>
-              <b:with value='&quot;String: &quot; + data:item.name' var='string'>
-                <b:loop values='data:checkNumber' var='first'>
-                  <b:if cond='data:string contains data:first + &quot;.&quot;'>
-                    <b:loop values='data:checkNumber' var='last'>
-                      <b:if cond='data:string contains &quot;.&quot; + data:last'>
-                        <script type='application/ld+json'>
-                          {
-                          &quot;@context&quot;: &quot;https://schema.org&quot;,
-                          &quot;@type&quot;: &quot;CreativeWorkSeries&quot;,
-                          &quot;url&quot;: &quot;<data:blog.url/>&quot;,
-                          &quot;name&quot;: &quot;<data:blog.pageTitle/>&quot;,
-                          &quot;alternateName&quot;: &quot;<data:blog.pageTitle/>&quot;,
-                          &quot;description&quot;: &quot;<data:blog.metaDescription/>&quot;,
-                          &quot;inLanguage&quot;: &quot;id&quot;,
-                          &quot;aggregateRating&quot;: {
-                          &quot;@type&quot;: &quot;AggregateRating&quot;,
-                          &quot;ratingValue&quot;: &quot;<data:item.name/>&quot;,
-                          &quot;bestRating&quot;: &quot;10&quot;,
-                          &quot;worstRating&quot;: &quot;0&quot;,
-                          &quot;ratingCount&quot;: &quot;<data:post.body.size/>&quot;,
-                          &quot;reviewCount&quot;: &quot;<data:post.body.size/>&quot;
-                          },
-                          &quot;author&quot;: {&quot;@type&quot;: &quot;Person&quot;, &quot;name&quot;: &quot;<data:post.author.name/>&quot;},
-                          &quot;publisher&quot;: {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;<data:blog.title/>&quot;}
-                          }
-                          }
-                        </script>
-                      </b:if>
-                    </b:loop>
-                  </b:if>
-                </b:loop>
-              </b:with>
-            </b:loop>
-          </b:if>
-        </b:with>
 <b:include cond='data:post.allowComments' data='post' name='commentPicker'/>
               </b:includable>
               <b:includable id='postStream' var='post'>
@@ -1202,7 +1134,7 @@ moveElement('.cover', 'cover');
               <b:widget-setting name='showPostTitle'>true</b:widget-setting>
               <b:widget-setting name='postId'>7207171071405903757</b:widget-setting>
               <b:widget-setting name='showFirstImage'>true</b:widget-setting>
-              <b:widget-setting name='useMostRecentPost'>false</b:widget-setting>
+              <b:widget-setting name='useMostRecentPost'>true</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main' var='this'>
               <b:include data='{ id: &quot;top_featured&quot; }' name='widget:class'/>
