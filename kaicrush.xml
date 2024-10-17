@@ -260,7 +260,7 @@ body#layout:after{content:'AniCrush by Kai Haruto (kaitheme)';display:block;font
             
             
             <b:case value='js'/>
-            <script src='https://unpkg.com/swiper/swiper-bundle.min.js'/>
+            <script src='https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.js'/>
             
             <b:case value='bloggerScript'/>
             /*<![CDATA[*/
