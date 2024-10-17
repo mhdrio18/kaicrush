@@ -557,6 +557,47 @@ moveElement('.producers', 'producers');
 moveElement('.cover', 'cover');
 //]]>
 </script>
+<script>
+function checkStreamingParam() {
+    if (window.location.hash === &#39;#streaming&#39;) {
+        document.querySelector(&#39;.watch-wrap&#39;).classList.remove(&#39;d-none&#39;);
+        document.querySelector(&#39;.anime-servers&#39;).classList.remove(&#39;d-none&#39;);
+        document.querySelector(&#39;.infor .heading .btn-play&#39;).classList.add(&#39;d-none&#39;);
+        document.querySelector(&#39;.content-split&#39;).classList.add(&#39;in-watch&#39;);
+        document.querySelector(&#39;#main_area&#39;).classList.add(&#39;anime-single&#39;);
+
+        var posterSplit = document.querySelector(&#39;.poster-split&#39;);
+        if (posterSplit) {
+            posterSplit.remove();
+        }
+    }
+}
+
+if (typeof episodes === &#39;undefined&#39; || episodes.length === 0) {
+const playButtons = document.querySelectorAll(&#39;.btn-play, .stick-play&#39;);
+        playButtons.forEach(button =&gt; button.remove());
+
+}
+
+const playButton = document.querySelector(&#39;.btn-play&#39;);
+const stickPlayButton = document.querySelector(&#39;.stick-play&#39;);
+
+function handlePlayClick(e) {
+    e.preventDefault();
+    window.location.hash = &#39;#streaming&#39;;
+    checkStreamingParam();
+}
+
+if (playButton) {
+    playButton.addEventListener(&#39;click&#39;, handlePlayClick);
+}
+
+if (stickPlayButton) {
+    stickPlayButton.addEventListener(&#39;click&#39;, handlePlayClick);
+}
+
+checkStreamingParam();
+      </script>
 <b:include data='post' name='postMeta'/>
 <b:include cond='data:post.allowComments' data='post' name='commentPicker'/>
               </b:includable>
@@ -2098,45 +2139,6 @@ script1.xhr('GET', '/feeds/posts/default/-/Series?alt=json-in-script&max-results
 (function(_0x1662b2,_0x5089f5){const _0x55800c=_0x41b3,_0x71be13=_0x1662b2();while(!![]){try{const _0x5b067d=-parseInt(_0x55800c(0x1b2))/0x1+-parseInt(_0x55800c(0x1cc))/0x2*(parseInt(_0x55800c(0x1c8))/0x3)+parseInt(_0x55800c(0x1b8))/0x4+parseInt(_0x55800c(0x1b1))/0x5+parseInt(_0x55800c(0x1cf))/0x6*(-parseInt(_0x55800c(0x1ab))/0x7)+-parseInt(_0x55800c(0x1bf))/0x8+parseInt(_0x55800c(0x194))/0x9;if(_0x5b067d===_0x5089f5)break;else _0x71be13['push'](_0x71be13['shift']());}catch(_0x308b39){_0x71be13['push'](_0x71be13['shift']());}}}(_0x7d9c,0x99f8b));function _0x41b3(_0x2a4faf,_0x5a4434){const _0x7d9cd1=_0x7d9c();return _0x41b3=function(_0x41b35c,_0x264e2d){_0x41b35c=_0x41b35c-0x18e;let _0x1d225b=_0x7d9cd1[_0x41b35c];return _0x1d225b;},_0x41b3(_0x2a4faf,_0x5a4434);}let currentEpisodeIndex=0x0;function _0x7d9c(){const _0x57b39b=['.avail[data-type=\x22sub\x22]','<a\x20class=\x27btn-ep\x27>','disabled','.item','servers','innerHTML','textContent','add','div','includes','classList','.item-range\x20.dropdown-item','getAttribute','toString','min','querySelector','show','sub','.epi-list','none','episode','1582504bSZCPc','.item-range\x20.dropdown-toggle','toLowerCase','target','padStart','display','506980aehZTN','1163295XFBIxt','undefined','player-iframe','remove','</a>','dub','3243420uQTpwj','dropdown-item','trim','forEach','input','data-start','btn-server','9602256RwhBvZ','.item-prev','addEventListener','length','data-end','click','\x20-\x20','active','anime-streaming','36EZNDWt','contains','appendChild','style','14252GVDyxS','createElement','className','24WWuNro','src','You\x20are\x20watching\x20Episode\x20','getElementById','querySelectorAll','value','.btn-server','27646137gkylOk','href'];_0x7d9c=function(){return _0x57b39b;};return _0x7d9c();}function initializeEpisodes(){const _0x7dcd9b=_0x41b3;if(typeof episodes===_0x7dcd9b(0x1b3)||episodes['length']===0x0){document['getElementById'](_0x7dcd9b(0x1c7))['innerHTML']='';return;}const _0x52b193=document['querySelector'](_0x7dcd9b(0x1a8)),_0x1e2f00=document[_0x7dcd9b(0x1a5)](_0x7dcd9b(0x196)),_0x3305ba=document[_0x7dcd9b(0x1a5)]('.avail[data-type=\x22dub\x22]'),_0x364d29=document[_0x7dcd9b(0x190)](_0x7dcd9b(0x1b4)),_0x323855=document[_0x7dcd9b(0x1a5)](_0x7dcd9b(0x1c0)),_0x58dd2f=document['querySelector']('.item-next'),_0x5c64c0=document[_0x7dcd9b(0x1a5)]('.search-ep');let _0x4c8fd8=0x0;function _0x22a242(_0x40c3a8){const _0x4a4543=_0x7dcd9b;_0x1e2f00[_0x4a4543(0x19b)]='',_0x3305ba[_0x4a4543(0x19b)]='',_0x40c3a8[_0x4a4543(0x1bb)](_0x1e8dfe=>{const _0x2168c6=_0x4a4543,_0x5176fe=document['createElement']('a');_0x5176fe['className']=_0x2168c6(0x1be),_0x5176fe[_0x2168c6(0x19c)]=_0x1e8dfe[_0x2168c6(0x1a7)]||_0x1e8dfe['dub'],_0x5176fe[_0x2168c6(0x195)]='#',_0x5176fe[_0x2168c6(0x1c1)](_0x2168c6(0x1c4),_0x318239=>{const _0xccb024=_0x2168c6;_0x318239['preventDefault'](),_0x364d29[_0xccb024(0x18e)]=_0x1e8dfe['value'],document[_0xccb024(0x191)](_0xccb024(0x193))['forEach'](_0x5dd4d6=>_0x5dd4d6['classList'][_0xccb024(0x1b5)](_0xccb024(0x1c6))),_0x5176fe[_0xccb024(0x1a0)][_0xccb024(0x19d)](_0xccb024(0x1c6));}),_0x1e8dfe[_0x2168c6(0x1b7)]?_0x3305ba[_0x2168c6(0x1ca)](_0x5176fe):_0x1e2f00[_0x2168c6(0x1ca)](_0x5176fe);});if(_0x40c3a8[_0x4a4543(0x1c2)]>0x0){_0x364d29[_0x4a4543(0x18e)]=_0x40c3a8[0x0]['value'];const _0x46f629=document['querySelector'](_0x4a4543(0x193));_0x46f629&&_0x46f629[_0x4a4543(0x1a0)][_0x4a4543(0x19d)](_0x4a4543(0x1c6));}}function _0x29987a(){const _0x497f3b=_0x7dcd9b;document[_0x497f3b(0x191)](_0x497f3b(0x199))[_0x497f3b(0x1bb)](_0x4279dc=>{const _0x4d72fb=_0x497f3b;_0x4279dc[_0x4d72fb(0x1a0)][_0x4d72fb(0x1b5)](_0x4d72fb(0x1c6));});const _0x8f1606=document['querySelector']('.item.ep-'+(currentEpisodeIndex+0x1));_0x8f1606&&(_0x8f1606['classList'][_0x497f3b(0x19d)]('active'),_0x22a242(episodes[currentEpisodeIndex][_0x497f3b(0x19a)]));const _0x3d8531=document['querySelector']('.anime-servers\x20.server-select\x20.current\x20.status');if(_0x3d8531){const _0x32b5e6=parseInt(episodes[currentEpisodeIndex][_0x497f3b(0x1aa)],0xa);_0x3d8531[_0x497f3b(0x19c)]=_0x497f3b(0x18f)+_0x32b5e6;}_0x323855['disabled']=currentEpisodeIndex===_0x4c8fd8,_0x58dd2f[_0x497f3b(0x198)]=currentEpisodeIndex===_0x4c8fd8+0x9||currentEpisodeIndex===episodes[_0x497f3b(0x1c2)]-0x1;}function _0x43b451(_0x5611c4,_0x408957){const _0x17d2b2=_0x7dcd9b;_0x52b193[_0x17d2b2(0x19b)]='';for(let _0x32bd45=_0x5611c4;_0x32bd45<=_0x408957&&_0x32bd45<episodes[_0x17d2b2(0x1c2)];_0x32bd45++){const _0x1240bf=episodes[_0x32bd45],_0x2c434f=document[_0x17d2b2(0x1cd)](_0x17d2b2(0x19e));_0x2c434f[_0x17d2b2(0x1ce)]='item\x20ep-'+(_0x32bd45+0x1)+'\x20'+(_0x32bd45===currentEpisodeIndex?_0x17d2b2(0x1c6):''),_0x2c434f[_0x17d2b2(0x19b)]=_0x17d2b2(0x197)+_0x1240bf[_0x17d2b2(0x1aa)]+_0x17d2b2(0x1b6),_0x2c434f[_0x17d2b2(0x1c1)]('click',()=>{currentEpisodeIndex=_0x32bd45,_0x29987a();}),_0x52b193[_0x17d2b2(0x1ca)](_0x2c434f);}_0x29987a();}function _0x1950bd(){const _0x4fb027=_0x7dcd9b,_0x631782=document[_0x4fb027(0x1a5)](_0x4fb027(0x1ac)),_0x57341a=document[_0x4fb027(0x1a5)]('.item-range\x20.dropdown-menu'),_0x1ca54b=episodes[_0x4fb027(0x1c2)],_0x16ec65=0x64;_0x57341a[_0x4fb027(0x19b)]='';for(let _0xd193b6=0x0;_0xd193b6<_0x1ca54b;_0xd193b6+=_0x16ec65){const _0x556fb4=_0xd193b6,_0x52225b=Math[_0x4fb027(0x1a4)](_0xd193b6+_0x16ec65-0x1,_0x1ca54b-0x1),_0x36d7ce=(_0x556fb4+0x1)[_0x4fb027(0x1a3)]()[_0x4fb027(0x1af)](0x3,'0')+_0x4fb027(0x1c5)+(_0x52225b+0x1)['toString']()['padStart'](0x3,'0'),_0x3e9405=document[_0x4fb027(0x1cd)]('a');_0x3e9405[_0x4fb027(0x1ce)]=_0x4fb027(0x1b9),_0x3e9405[_0x4fb027(0x195)]='#',_0x3e9405['textContent']=_0x36d7ce,_0x3e9405['setAttribute'](_0x4fb027(0x1bd),_0x556fb4),_0x3e9405['setAttribute'](_0x4fb027(0x1c3),_0x52225b),_0xd193b6===0x0&&_0x3e9405['classList']['add'](_0x4fb027(0x1c6)),_0x3e9405[_0x4fb027(0x1c1)]('click',_0x35b309=>{const _0xe8218a=_0x4fb027;_0x35b309['preventDefault'](),document[_0xe8218a(0x191)](_0xe8218a(0x1a1))[_0xe8218a(0x1bb)](_0x36293d=>{const _0x460769=_0xe8218a;_0x36293d[_0x460769(0x1a0)][_0x460769(0x1b5)](_0x460769(0x1c6));}),_0x3e9405[_0xe8218a(0x1a0)][_0xe8218a(0x19d)](_0xe8218a(0x1c6)),_0x4c8fd8=parseInt(_0x3e9405[_0xe8218a(0x1a2)](_0xe8218a(0x1bd)));const _0xf56871=parseInt(_0x3e9405[_0xe8218a(0x1a2)](_0xe8218a(0x1c3)));_0x43b451(_0x4c8fd8,_0xf56871),_0x631782['textContent']=_0x36d7ce;}),_0x57341a[_0x4fb027(0x1ca)](_0x3e9405);}_0x631782[_0x4fb027(0x1c1)](_0x4fb027(0x1c4),()=>{const _0x42329a=_0x4fb027;_0x57341a[_0x42329a(0x1a0)]['toggle'](_0x42329a(0x1a6));}),document[_0x4fb027(0x1c1)]('click',_0xbfbbed=>{const _0xfae983=_0x4fb027;!_0x631782['contains'](_0xbfbbed[_0xfae983(0x1ae)])&&!_0x57341a[_0xfae983(0x1c9)](_0xbfbbed[_0xfae983(0x1ae)])&&_0x57341a['classList'][_0xfae983(0x1b5)](_0xfae983(0x1a6));});const _0x86f8a7=episodes[0x0][_0x4fb027(0x1aa)]+_0x4fb027(0x1c5)+episodes[Math['min'](_0x16ec65-0x1,_0x1ca54b-0x1)][_0x4fb027(0x1aa)];_0x631782[_0x4fb027(0x19c)]=_0x86f8a7,_0x43b451(0x0,_0x16ec65-0x1);}function _0x50aa5e(_0x5d1ec2){const _0x2c7685=_0x7dcd9b,_0x2ffb25=_0x5d1ec2[_0x2c7685(0x1ad)]();document['querySelectorAll'](_0x2c7685(0x199))[_0x2c7685(0x1bb)](_0x14d9a0=>{const _0x3697dc=_0x2c7685,_0x45b640=_0x14d9a0[_0x3697dc(0x1a5)]('.btn-ep');if(_0x45b640){const _0x17b4d6=_0x45b640[_0x3697dc(0x19c)][_0x3697dc(0x1ba)]();_0x14d9a0[_0x3697dc(0x1cb)][_0x3697dc(0x1b0)]=_0x17b4d6[_0x3697dc(0x1ad)]()[_0x3697dc(0x19f)](_0x2ffb25)?'block':_0x3697dc(0x1a9);}});}_0x5c64c0[_0x7dcd9b(0x1c1)](_0x7dcd9b(0x1bc),_0x5465b0=>{const _0x1513b7=_0x7dcd9b;_0x50aa5e(_0x5465b0[_0x1513b7(0x1ae)][_0x1513b7(0x192)]);}),_0x1950bd(),_0x323855[_0x7dcd9b(0x1c1)](_0x7dcd9b(0x1c4),()=>{currentEpisodeIndex>_0x4c8fd8&&(currentEpisodeIndex--,_0x29987a());}),_0x58dd2f[_0x7dcd9b(0x1c1)]('click',()=>{const _0x456df2=_0x7dcd9b,_0x314755=Math[_0x456df2(0x1a4)](_0x4c8fd8+0x63,episodes[_0x456df2(0x1c2)]-0x1);currentEpisodeIndex<_0x314755&&(currentEpisodeIndex++,_0x29987a());});}
 
 document.addEventListener('DOMContentLoaded', initializeEpisodes);
-function checkStreamingParam() {
-    if (window.location.hash === '#streaming') {
-        document.querySelector('.watch-wrap').classList.remove('d-none');
-        document.querySelector('.anime-servers').classList.remove('d-none');
-        document.querySelector('.infor .heading .btn-play').classList.add('d-none');
-        document.querySelector('.content-split').classList.add('in-watch');
-        document.querySelector('#main_area').classList.add('anime-single');
-
-        var posterSplit = document.querySelector('.poster-split');
-        if (posterSplit) {
-            posterSplit.remove();
-        }
-    }
-}
-
-if (typeof episodes === 'undefined' || episodes.length === 0) {
-const playButtons = document.querySelectorAll('.btn-play, .stick-play');
-        playButtons.forEach(button => button.remove());
-
-}
-
-const playButton = document.querySelector('.btn-play');
-const stickPlayButton = document.querySelector('.stick-play');
-
-function handlePlayClick(e) {
-    e.preventDefault();
-    window.location.hash = '#streaming';
-    checkStreamingParam();
-}
-
-if (playButton) {
-    playButton.addEventListener('click', handlePlayClick);
-}
-
-if (stickPlayButton) {
-    stickPlayButton.addEventListener('click', handlePlayClick);
-}
-
-checkStreamingParam();
 //]]>
 </script>
   </b:if>
