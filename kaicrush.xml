@@ -564,6 +564,7 @@ function checkStreamingParam() {
         document.querySelector(&#39;.anime-servers&#39;).classList.remove(&#39;d-none&#39;);
         document.querySelector(&#39;.infor .heading .btn-play&#39;).classList.add(&#39;d-none&#39;);
         document.querySelector(&#39;.content-split&#39;).classList.add(&#39;in-watch&#39;);
+        document.querySelector(&#39;.breadcrumb-base&#39;).classList.add(&#39;d-none&#39;);
         document.querySelector(&#39;#main_area&#39;).classList.add(&#39;anime-single&#39;);
 
         var posterSplit = document.querySelector(&#39;.poster-split&#39;);
@@ -1858,9 +1859,11 @@ script1.xhr('GET', '/feeds/posts/default/-/Series?alt=json-in-script&max-results
             <b:includable id='page' var='post'>
                 <div class='row-base-header'>
     <div class='heading'><h2 class='heading-lg m-0'><data:post.title/></h2></div>
+              </div>
+                  <div class='row-base-content'>
                   <data:post.body/>
-                <b:include data='post' name='postMeta'/>
                   </div>
+                <b:include data='post' name='postMeta'/>
               </b:includable>
             <b:includable id='platformShare'/>
             <b:includable id='post' var='post'/>
