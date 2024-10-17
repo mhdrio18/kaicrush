@@ -2168,12 +2168,7 @@ const notiDropdown = document.querySelector('#header_user .noti-dropdown');
   Source code: https://www.igniel.com/2022/12/widget-bookmark-blog.html
 ---- */
 const bookmarks = {
-  maxWidget: 5,
-  maxAll: 100,
-  emptyText: 'Tidak ada bookmark',
-  moreText: 'Lihat selengkapnya',
-  currentText: 'Anda sedang melihat halaman bookmark',
-  morePage: '/p/bookmark.html',
+  maxWidget: max_bookmark,
   deleteText: '<svg width="15" height="15" fill="white" viewBox="0 0 24 24"><path d="M18.8892 9.5542C18.8892 17.5732 20.0435 21.198 12.2797 21.198C4.5149 21.198 5.693 17.5732 5.693 9.5542"/><path d="M20.3651 6.47985H4.2146"/><path d="M15.7148 6.47983C15.7148 6.47983 16.2434 2.71411 12.2891 2.71411C8.33578 2.71411 8.86435 6.47983 8.86435 6.47983"/></svg> Delete'
 };
 
