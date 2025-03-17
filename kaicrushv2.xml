@@ -720,30 +720,6 @@ document.addEventListener("DOMContentLoaded", function () {
       </script>
       </b:includable>
   </b:defaultmarkup>
-    <b:defaultmarkups>
-      <b:defaultmarkup type='All'>
-      </b:defaultmarkup>
-      <b:defaultmarkup type='AdSense,Blog'>
-      </b:defaultmarkup>
-      <b:defaultmarkup type='Blog,PopularPosts,FeaturedPost'>
-      </b:defaultmarkup>
-      <b:defaultmarkup type='PopularPosts,FeaturedPost'>
-      </b:defaultmarkup>
-      <b:defaultmarkup type='Blog'>
-      </b:defaultmarkup>
-      <b:defaultmarkup type='BlogArchive'>
-      </b:defaultmarkup>
-      <b:defaultmarkup type='BlogSearch'>
-      </b:defaultmarkup>
-      <b:defaultmarkup type='Header'>
-      </b:defaultmarkup>
-      <b:defaultmarkup type='Label'>
-      </b:defaultmarkup>
-      <b:defaultmarkup type='PageList'>
-      </b:defaultmarkup>
-      <b:defaultmarkup type='Profile'>
-      </b:defaultmarkup>
-    </b:defaultmarkups>
 </b:defaultmarkups>
 <script crossorigin='anonymous' defer='defer' integrity='sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==' referrerpolicy='no-referrer' src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js'/>
 </head>
