@@ -1,206 +1,249 @@
-<ul class="anime_folder-list alphabet mt-3 mb-4">
-        <li>
-            <div class="item item-head"><span class="base-icon icon-14"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path opacity="0.4" d="M13 7L11.8845 4.76892C11.5634 4.12679 11.4029 3.80573 11.1634 3.57116C10.9516 3.36373 10.6963 3.20597 10.4161 3.10931C10.0992 3 9.74021 3 9.02229 3H5.2C4.0799 3 3.51984 3 3.09202 3.21799C2.71569 3.40973 2.40973 3.71569 2.21799 4.09202C2 4.51984 2 5.07989 2 6.2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M2 7H17.2C18.8802 7 19.7202 7 20.362 7.32698C20.9265 7.6146 21.3854 8.07354 21.673 8.63803C22 9.27976 22 10.1198 22 11.8V16.2C22 17.8802 22 18.7202 21.673 19.362C21.3854 19.9265 20.9265 20.3854 20.362 20.673C19.7202 21 18.8802 21 17.2 21H6.8C5.11984 21 4.27976 21 3.63803 20.673C3.07354 20.3854 2.6146 19.9265 2.32698 19.362C2 18.7202 2 17.8802 2 16.2V7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg></span><span class="name">Letters</span></div>
-        </li>
-        <li><a class="item" href="/p/az-list.html"><span class="name">All</span></a></li>
-        <li><a class="item" href="/p/az-list.html?letter=other"><span class="name">#</span></a></li>
-        <li><a class="item" href="/p/az-list.html?letter=0-9"><span class="name">0-9</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=A"><span class="name">A</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=B"><span class="name">B</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=C"><span class="name">C</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=D"><span class="name">D</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=E"><span class="name">E</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=F"><span class="name">F</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=G"><span class="name">G</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=H"><span class="name">H</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=I"><span class="name">I</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=J"><span class="name">J</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=K"><span class="name">K</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=L"><span class="name">L</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=M"><span class="name">M</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=N"><span class="name">N</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=O"><span class="name">O</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=P"><span class="name">P</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=Q"><span class="name">Q</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=R"><span class="name">R</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=S"><span class="name">S</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=T"><span class="name">T</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=U"><span class="name">U</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=V"><span class="name">V</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=W"><span class="name">W</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=X"><span class="name">X</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=Y"><span class="name">Y</span></a></li>
-  <li><a class="item" href="/p/az-list.html?letter=Z"><span class="name">Z</span></a></li>
-        <li class="more"><a class="item"><span class="name"></span></a></li>
-    </ul>
-<br>
-<div class='row-base-content azlist'>
-  <div class='base-loading-relative'>
-  <div class='base-loading'></div>
-                </div>
+<div class="base-loading-relative"><div class="base-loading"></div></div>
+<div class='anime-grid-basic'>
 <script>
-// Define constants
-postsPerPage = 12; // Number of posts to display per page
-currentPage = 1; // Starting page
+// Pilih elemen parent berdasarkan kelas
+const folderList = document.querySelector('.anime_folder-list.alphabet.mt-3.mb-4');
 
-// Function to get the URL parameter value by name
-function getUrlParameter(name) {
-    let urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
+// Cek apakah elemen ada
+if (folderList) {
+    // Tambahkan HTML az-list yang dimodifikasi dengan elemen gambar
+    const htmlContent = `
+        <li>
+            <div class="item item-head">
+                <span class="base-icon icon-14">
+                    <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 7L11.8845 4.76892C11.5634 4.12679 11.4029 3.80573 11.1634 3.57116C10.9516 3.36373 10.6963 3.20597 10.4161 3.10931C10.0992 3 9.74021 3 9.02229 3H5.2C4.0799 3 3.51984 3 3.09202 3.21799C2.71569 3.40973 2.40973 3.71569 2.21799 4.09202C2 4.51984 2 5.07989 2 6.2V7" opacity="0.4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        <path d="M2 7H17.2C18.8802 7 19.7202 7 20.362 7.32698C20.9265 7.6146 21.3854 8.07354 21.673 8.63803C22 9.27976 22 10.1198 22 11.8V16.2C22 17.8802 22 18.7202 21.673 19.362C21.3854 19.9265 20.9265 20.3854 20.362 20.673C19.7202 21 18.8802 21 17.2 21H6.8C5.11984 21 4.27976 21 3.63803 20.673C3.07354 20.3854 2.6146 19.9265 2.32698 19.362C2 18.7202 2 17.8802 2 16.2V7Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </span>
+                <span class="name">Letters</span>
+            </div>
+        </li>
+        <li>
+            <a class="item active" data-letter="all">All</a>
+        </li>
+        <li>
+            <a class="item" data-letter="other">#</a>
+        </li>
+        <li>
+            <a class="item" data-letter="0-9">0-9</a>
+        </li>
+        <!-- Tambahkan huruf A-Z -->
+        ${[...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map(letter => `
+            <li>
+                <a class="item" data-letter="${letter}">${letter}</a>
+            </li>
+        `).join('')}
+    <li class="more"><a class="item"><span class="name"></span></a></li>`;
+
+    // Tambahkan HTML ke elemen
+    folderList.innerHTML += htmlContent;
 }
 
-// Fetching the selected letter from the 'show' URL parameter
-selectedLetter = getUrlParameter('letter');
-
-// Default to 'all' if no letter is selected
-if (!selectedLetter) {
-    selectedLetter = "all";
-}
+const postsPerPage = 12; // Number of posts to display per page
+let currentPage = 1; // Starting page
+let selectedLetter = "all"; // Default selected letter
+let totalPages = 0; // Placeholder for total pages
 
 azList = new BloggerScript();
 
-azList.siteMap("/feeds/posts/summary/-/Series", function (e) {
-    let t = "",
-        s = "",
-        a = "",
-        i = new Array,
-        l = new Array,
-        totalPosts = 0; // Variable to count total posts
+azList.siteMap("/feeds/posts/summary/-/Series", function (posts) {
+    let letters = ""; // Used to track unique letters
+    let groupedPosts = {}; // Group posts by their first letter
+    let allLetters = []; // Array of unique letters for sorting
 
-    // Iterating through each post
-    e.forEach(e => {
-        let char;
-        if (!isNaN(e.title.charAt(0))) { // Check if the first character is a number
-            char = "#"; // Assign # if it's a number
-        } else {
-            char = e.title.charAt(0).toLowerCase(); // Otherwise, take the first letter in lowercase
-        }
+    // Group posts by their first letter
+    posts.forEach(post => {
+        let char = !isNaN(post.title.charAt(0)) ? "#" : post.title.charAt(0).toUpperCase();
 
-        if (-1 == t.indexOf(char)) {
-            t += char;
-            i[char] = [{
-                title: e.title,
-                url: e.link,
-                thumbnail: e.image
-            }];
+        if (!letters.includes(char)) {
+            letters += char;
+            groupedPosts[char] = [post];
         } else {
-            i[char].push({
-                title: e.title,
-                url: e.link,
-                thumbnail: e.image
-            });
+            groupedPosts[char].push(post);
         }
     });
 
-    for (var r in i) {
-        l.push(r);
-    }
+    // Collect and sort unique letters
+    allLetters = Object.keys(groupedPosts).sort();
 
-    const n = l.sort(); // Sort the letters
+    function renderPagination(totalPages) {
+    const paginationContainer = document.querySelector('.section-pagination');
+    if (!paginationContainer) return;
 
-    // Filtering based on the selected letter (from the 'show' parameter)
-    let filteredPosts = [];
-    n.forEach(e => {
-        if (selectedLetter === "all" || selectedLetter.toLowerCase() === e || (selectedLetter === "0-9" && e === "#")) {
-            let sortedList = i[e].sort((e, t) => e.title > t.title ? 1 : -1); // Sort by title
-            filteredPosts.push(...sortedList); // Add all posts matching the selected letter
+    let paginationHtml = `<ul class="pagination justify-content-center mb-0" role="navigation" aria-label="Pagination">`;
+
+    // Previous button
+    paginationHtml += `
+        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+            <a class="page-link" role="button" ${currentPage === 1 ? 'aria-disabled="true" tabindex="-1"' : ''} aria-label="Previous page" rel="prev" onclick="changePage(${currentPage - 1})">&lt;</a>
+        </li>
+    `;
+
+    // Loop through pages
+    const maxPageLinks = 1; // Number of pages before and after the current page
+    const pageRange = Array.from({ length: totalPages }, (_, i) => i + 1);
+    pageRange.forEach((page) => {
+        // Add first and last page
+        if (page === 1 || page === totalPages) {
+            paginationHtml += renderPageLink(page);
+        }
+        // Add pages around the current page
+        else if (page >= currentPage - maxPageLinks && page <= currentPage + maxPageLinks) {
+            paginationHtml += renderPageLink(page);
+        }
+        // Add ellipsis for skipped pages
+        else if (
+            (page === currentPage - maxPageLinks - 1 && page !== 1) ||
+            (page === currentPage + maxPageLinks + 1 && page !== totalPages)
+        ) {
+            paginationHtml += `<li class="page-item disabled"><span class="page-link">...</span></li>`;
         }
     });
 
-    totalPosts = filteredPosts.length; // Update totalPosts after filtering
+    // Next button
+    paginationHtml += `
+        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+            <a class="page-link" role="button" ${currentPage === totalPages ? 'aria-disabled="true" tabindex="-1"' : ''} aria-label="Next page" rel="next" onclick="changePage(${currentPage + 1})">&gt;</a>
+        </li>
+    `;
 
-    // Function to render posts for the current page
-    function renderPosts(page) {
-        let start = (page - 1) * postsPerPage;
+    paginationHtml += `</ul>`;
+    paginationContainer.innerHTML = paginationHtml;
+}
+
+// Helper function to render a single page link
+function renderPageLink(page) {
+    return `
+        <li class="page-item ${currentPage === page ? 'active' : ''}">
+            <a class="page-link" role="button" tabindex="0" aria-label="Page ${page}" ${currentPage === page ? 'aria-current="page"' : ''} onclick="changePage(${page})">${page}</a>
+        </li>
+    `;
+}
+
+    // Function to render posts
+    function renderPosts(letter) {
+        let filteredPosts = [];
+        allLetters.forEach(char => {
+            if (letter === "all" || letter === char || (letter === "0-9" && char === "#")) {
+                let sortedList = groupedPosts[char].sort((a, b) => a.title.localeCompare(b.title));
+                filteredPosts.push(...sortedList);
+            }
+        });
+
+        // Pagination logic
+        totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+        let start = (currentPage - 1) * postsPerPage;
         let end = start + postsPerPage;
-        let paginatedPosts = filteredPosts.slice(start, end); // Get posts for the current page
-        let postsHtml = '';
+        let paginatedPosts = filteredPosts.slice(start, end);
 
+        // Generate HTML for posts
+        let postsHtml = "";
         paginatedPosts.forEach(post => {
-            // Dynamically add items to the grid
-            postsHtml += `<div class="item" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+            let tempDiv = document.createElement("div");
+            tempDiv.innerHTML = post.content;
+
+            // Extract aired date and duration
+            let scriptTag = tempDiv.querySelector("script");
+            let aired = "";
+            let duration = "";
+
+            if (scriptTag) {
+                try {
+                    let scriptContent = scriptTag.textContent;
+                    aired = scriptContent.match(/aired:\s*['"]([^'"]+)['"]/)?.[1] || "";
+                    duration = scriptContent.match(/duration:\s*['"]([^'"]+)['"]/)?.[1] || "";
+                } catch (error) {
+                    console.error("Error parsing script tag:", error);
+                }
+            }
+
+            // Extract labels for type, episodes, and dub
+            let type = post.label.find(label => kaiTipe.includes(label));
+            let episode = post.label.find(label => regexEpisode.test(label)) || "";
+            let dub = post.label.find(label => /Dub\s\d+/.test(label)) || "";
+
+            // Generate HTML for dub and episode
+            let dubHTML = dub
+                ? `<div class="item item-flex item-dub">
+                        <div class="sp-icon sp-12 sp-light sp-icon-dub"></div>
+                        <div class="name">${dub.replace(/Dub|dub/g, "")}</div>
+                   </div>`
+                : "";
+
+            let subHTML = episode
+                ? `<div class="item item-flex item-sub">
+                        <div class="sp-icon sp-12 sp-light sp-icon-sub"></div>
+                        <div class="name">${episode.replace(/Episode|Ep/g, "")}</div>
+                   </div>`
+                : "";
+
+            // Create post card HTML
+            postsHtml += `<div class="item">
                             <div class="grid-card">
-                                <a class="anime-thumbnail" href="${post.url}" title="${post.title}">
-                                    
+                                <a class="anime-thumbnail" href="${post.link}" title="${post.title}">
+                                <div class="stick-mask bottom-left">
+                                    ${dubHTML} ${subHTML}
+                                    </div>
                                     <div class="stick-play">Watch now</div>
-                                    <img alt="${post.title}" class="anime-thumbnail-img" loading="lazy" src="${post.thumbnail.replace('s72-c', 's320-rw')}">
+                                    <img alt="${post.title}" class="anime-thumbnail-img lazy" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="${post.image.replace('s72-c', 's320-rw')}">
                                 </a>
                                 <div class="e-detail">
                                     <h3 class="anime-name">
-                                        <a href="${post.url}" title="${post.title}">${post.title}</a>
+                                        <a href="${post.link}" title="${post.title}">${post.title}</a>
                                     </h3>
+                                    <div class="others">
+                                        <div class="item item-quality">${type}</div>
+                                        <div class="item item-eps">${duration}</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>`;
+                          </div>`;
         });
 
-        // Insert the results into the HTML
-        document.querySelector(".azlist").innerHTML = `<div class="anime-grid-basic">${postsHtml}</div>`;
-    }
+        // Insert posts into the grid
+        document.querySelector(".anime-grid-basic").innerHTML = postsHtml;
 
-    // Function to create pagination
-function createPagination(totalPosts, postsPerPage, currentPage) {
-    let totalPages = Math.ceil(totalPosts / postsPerPage);
-    let paginationHtml = '<ul class="pagination justify-content-center mb-0" role="navigation" aria-label="Pagination">';
+        // Render pagination
+        renderPagination(totalPages);
 
-    // Tombol Prev: hanya muncul jika bukan di halaman pertama
-    if (currentPage > 1) {
-        paginationHtml += `<li class="page-item">
-            <a class="page-link" href="#" tabindex="-1" role="button" aria-label="Previous page" onclick="goToPage(${currentPage - 1})">&lt;</a>
-        </li>`;
-    }
-
-    // Page numbers logic
-    let maxPagesToShow = 3; // Maximum number of page numbers to show
-    let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
-    let endPage = Math.min(totalPages, currentPage + Math.floor(maxPagesToShow / 2));
-
-    if (startPage > 1) {
-        paginationHtml += `<li class="page-item"><a class="page-link" href="#" onclick="goToPage(1)">1</a></li>`;
-        if (startPage > 2) {
-            paginationHtml += `<li class="page-item disabled"><a class="page-link" href="#">...</a></li>`;
+        // Remove loading indicator if present
+        const loadingElement = document.querySelector('.base-loading-relative');
+        if (loadingElement) {
+            loadingElement.remove();
         }
     }
 
-    for (let page = startPage; page <= endPage; page++) {
-        paginationHtml += `<li class="page-item ${page === currentPage ? 'active' : ''}">
-            <a class="page-link" href="#" role="button" ${page !== currentPage ? `onclick="goToPage(${page})"` : ''}>${page}</a>
-        </li>`;
-    }
-
-    if (endPage < totalPages) {
-        if (endPage < totalPages - 1) {
-            paginationHtml += `<li class="page-item disabled"><a class="page-link" href="#">...</a></li>`;
-        }
-        paginationHtml += `<li class="page-item"><a class="page-link" href="#" onclick="goToPage(${totalPages})">${totalPages}</a></li>`;
-    }
-
-    // Tombol Next: hanya muncul jika belum di halaman terakhir
-    if (currentPage < totalPages) {
-        paginationHtml += `<li class="page-item">
-            <a class="page-link" href="#" tabindex="0" role="button" aria-label="Next page" onclick="goToPage(${currentPage + 1})">&gt;</a>
-        </li>`;
-    }
-
-    paginationHtml += '</ul>';
-
-    // Insert pagination HTML
-    document.querySelector(".section-pagination").innerHTML = paginationHtml;
-}
-
-    // Function to handle page change
-    window.goToPage = function(page) {
+    // Change page function
+    window.changePage = function (page) {
+        if (page < 1 || page > totalPages) return;
         currentPage = page;
-        renderPosts(currentPage);
-        createPagination(totalPosts, postsPerPage, currentPage);
+        renderPosts(selectedLetter);
     };
 
-    // Initial render
-    renderPosts(currentPage);
-    createPagination(totalPosts, postsPerPage, currentPage);
+    selectedLetter = "all"; // Default load "All" saat halaman pertama kali dibuka
+    renderPosts(selectedLetter); // Render daftar anime "All"
+
+    document.querySelectorAll('.anime_folder-list .item[data-letter]').forEach(item => {
+        item.addEventListener('click', function () {
+            // Hapus kelas aktif dari semua item
+            document.querySelectorAll('.anime_folder-list .item[data-letter]').forEach(i => i.classList.remove('active'));
+
+            // Tambahkan kelas aktif ke item yang diklik
+            this.classList.add('active');
+
+            selectedLetter = this.getAttribute('data-letter'); // Ambil huruf yang diklik
+            currentPage = 1; // Reset ke halaman pertama
+            
+          
+            document.querySelector(".anime-grid-basic").innerHTML = ``;
+
+            // Tunggu 300ms (opsional, efek loading)
+            setTimeout(() => {
+                renderPosts(selectedLetter);
+            }, 300);
+        });
+    });
 });
 </script>
 </div>
