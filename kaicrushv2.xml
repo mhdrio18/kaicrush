@@ -99,8 +99,8 @@
   <meta content='blogger' name='generator'/>
   <link href='https://www.blogger.com/openid-server.g' rel='openid.server'/>
   <link expr:href='data:blog.homepageUrl.canonical' rel='openid.delegate'/>
-  <data:blog.feedLinks/>
-  <data:blog.meTag/>
+  <link expr:href='data:blog.homepageUrl.canonical + "feeds/posts/default"' expr:title='data:blog.title + " - Atom"' rel='alternate' type='application/atom+xml'/>
+  <link expr:href='data:blog.homepageUrl.canonical + "feeds/posts/default?alt=rss"' expr:title='data:blog.title + " - RSS"' rel='alternate' type='application/rss+xml'/>
   
   <meta expr:content='data:view.isHomepage ? &quot;website&quot; : &quot;article&quot;' property='og:type'/>
   <meta content='id_ID' property='og:locale'/>
