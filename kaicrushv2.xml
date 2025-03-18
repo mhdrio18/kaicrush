@@ -115,7 +115,6 @@
   <meta content='width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=5.0' name='viewport'/>
   <meta expr:content='&quot;text/html; charset=&quot; + data:blog.encoding' http-equiv='Content-Type'/>
   <meta content='IE=Edge' http-equiv='X-UA-Compatible'/>
-  <b:if cond='data:view.isArchive or data:view.isSearch or data:view.isError'><meta content='noindex,nofollow' name='robots'/></b:if>
     
 <b:comment>Prefetch</b:comment>
 <b:loop values='{data:blog.homepageUrl, &quot;//blogger.com&quot;, &quot;//blogger.googleusercontent.com&quot;, &quot;//bp.blogspot.com&quot;, &quot;//lh.googleusercontent.com&quot;, &quot;//feeds.feedburner.com&quot;, &quot;//cdnjs.cloudflare.com&quot;, &quot;//googletagservices.com&quot;, &quot;//tpc.googlesyndication.com&quot;, &quot;//fonts.googleapis.com&quot;, &quot;//pagead2.googlesyndication.com&quot;, &quot;//disqus.com&quot;, &quot;//jsdelivr.com&quot;, &quot;//fonts.gstatic.com&quot;, &quot;//use.fontawesome.com&quot;, &quot;//googletagmanager.com&quot;, &quot;//resources.blogblog.com&quot;}' var='link'>
