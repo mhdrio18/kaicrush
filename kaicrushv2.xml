@@ -757,7 +757,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <script>
   /*<![CDATA[*/
 const config = {
-    gDriveApikey: "AIzaSyAe5Fg8WxOQKlESXIx063qKPABPB0Z8RfQ",
+    gDriveApikey: "API_KEY",
     poster: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0dAHR4aeMs4cBZDz30h18JPRHyAUkI4yzqDzAH54Cm4-RD7s0XYsg7Lu3s3-v0X8IVCPvRbz5RBSQ7UXr9K4tpT74VRnUFkI0HS9wGrlwoyV6jP61w69CoE33TLVr35BC_XcCQJ6VswvZ8paSzUDL4ljRcKBrjrWSOjslWhIcMqXl6ygD2fttxVHzOKSP/s800/4dzp7aZnBaIL1YFzErKUdo6XWUn.jpg",
     title: "KainimeID"
 };
