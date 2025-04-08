@@ -400,26 +400,16 @@ label.rep-more.rep-in{position:absolute;top:50px;left:2px}.item-flex .commentSor
                 <div class='main'>
                   <h1 class='entry-title heading-md mb-0 text-white'><data:post.title/></h1>
                   <div class='other-items'>
-                    <div class='item item-pg'>
-                    <b:loop values='[&quot;PG-&quot;]' var='c'>
-  <b:if cond='data:c'>
-    <b:if cond='data:post.labels any (l =&gt; &quot;S: &quot; + l.name contains data:c)'>
-      <b:loop values='data:post.labels' var='l'>
-        <b:if cond='&quot;S: &quot; + data:l.name contains data:c'>
-          <data:l.name/>
-        </b:if>
-      </b:loop>
-    <b:else/>
-      PG-13
-    </b:if>
-  </b:if>
-</b:loop>
-                    </div>
-                    <div class='item item-pg'>
-                    <b:loop values='data:post.labels limit 1' var='l'>
-                      <b:if cond='data:l.name in data:Quality'><data:l.name/><b:else/>HD</b:if>
-                    </b:loop>
-                    </div>
+                    <b:loop values='data:post.labels' var='l'>
+                <b:if cond='data:l.name in data:type'>
+                  <div class='item item-pg'><data:l.name/></div>
+                </b:if>
+              </b:loop>
+                      <b:loop values='data:post.labels' var='l'>
+                <b:if cond='data:l.name in data:status'>
+                  <div class='item item-pg'><data:l.name/></div>
+                </b:if>
+              </b:loop>
                     <b:include data='{filter: data:checkEpisode, class: &quot;sub&quot; }' name='EpDub'/>
                       <b:include data='{filter: data:checkDub, class: &quot;dub&quot; }' name='EpDub'/>
                     <script>document.querySelectorAll(&#39;.item-flex .name&#39;).forEach(el =&gt; {
