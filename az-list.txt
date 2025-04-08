@@ -47,7 +47,7 @@ let totalPages = 0; // Placeholder for total pages
 
 azList = new BloggerScript();
 
-azList.siteMap("/feeds/posts/summary/-/Series", function (posts) {
+azList.siteMap("/feeds/posts/default/-/Series", function (posts) {
     let letters = ""; // Used to track unique letters
     let groupedPosts = {}; // Group posts by their first letter
     let allLetters = []; // Array of unique letters for sorting
@@ -145,17 +145,17 @@ function renderPageLink(page) {
 
             // Extract aired date and duration
             let scriptTag = tempDiv.querySelector("script");
-            let aired = "";
             let duration = "";
 
             if (scriptTag) {
                 try {
                     let scriptContent = scriptTag.textContent;
-                    aired = scriptContent.match(/aired:\s*['"]([^'"]+)['"]/)?.[1] || "";
                     duration = scriptContent.match(/duration:\s*['"]([^'"]+)['"]/)?.[1] || "";
                 } catch (error) {
                     console.error("Error parsing script tag:", error);
                 }
+            } else {
+                duration = "0m";
             }
 
             // Extract labels for type, episodes, and dub
@@ -186,7 +186,7 @@ function renderPageLink(page) {
                                     ${dubHTML} ${subHTML}
                                     </div>
                                     <div class="stick-play">Watch now</div>
-                                    <img alt="${post.title}" class="anime-thumbnail-img lazy" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="${post.image.replace('s72-c', 's320-rw')}">
+                                    <img alt="${post.title}" class="anime-thumbnail-img lazy" loading="lazy" src="${post.image.replace('s72-c', 's320-rw')}">
                                 </a>
                                 <div class="e-detail">
                                     <h3 class="anime-name">
