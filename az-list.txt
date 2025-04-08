@@ -155,7 +155,7 @@ function renderPageLink(page) {
                     console.error("Error parsing script tag:", error);
                 }
             } else {
-                duration = "0m";
+                duration = "";
             }
 
             // Extract labels for type, episodes, and dub
