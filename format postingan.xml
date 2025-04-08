@@ -1,51 +1,42 @@
 <!-- [  Sinopsis  ] -->
 <div class="synopsis">
-<p>Ketika Subaru Natsuki meninggalkan toko serba ada, hal terakhir yang dia harapkan adalah direnggut dari kehidupan sehari-harinya dan dijatuhkan ke dunia fantasi. Segalanya tidak terlihat baik bagi remaja yang kebingungan. Namun, tidak lama setelah kedatangannya, dia diserang oleh beberapa preman.</p>
-<p>Hanya berbekal sekantong belanjaan dan ponsel yang kini tidak berguna, dia dengan cepat dipukuli hingga babak belur. Untungnya, kecantikan misterius bernama Satella, yang sedang mengejar orang yang mencuri lambangnya, mendatangi Subaru dan menyelamatkannya. Untuk berterima kasih kepada gadis yang jujur ​​dan baik hati, Subaru menawarkan bantuan dalam pencariannya, dan malamnya, dia bahkan menemukan keberadaan apa yang dia cari. Namun tanpa sepengetahuan mereka, kekuatan yang jauh lebih gelap mengintai keduanya dari bayang-bayang, dan hanya beberapa menit setelah menemukan lambang tersebut, Subaru dan Satella dibunuh secara brutal.</p>
+<p>SINOPSIS</p>
 </div>
 <span><a name='more'></a></span>
 
 <!-- [  Thumbnail  ] -->
-<!--<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQpZ4_QkJCDQbGcMZMtgJGMEYnkmzRdX1iACjfJZ65RF5Z6kOziumGzD6j_NJhoEDD7-juJGJQb3-rclmYFdalOngyHWFypWZXKakFMyaUszpmBdzaW8fQr4W1lksr1J6Jpr4WFdFTM7z5eowmW0PBtMq5RY6kdwB4VkO1_5m6HJu36F7w3atxHKkxLMk/s600/SOKUJA-Re_Zero_kara_Hajimeru_Isekai_Seikatsu_3rd_Season-10.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="320" data-original-height="600" data-original-width="424" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQpZ4_QkJCDQbGcMZMtgJGMEYnkmzRdX1iACjfJZ65RF5Z6kOziumGzD6j_NJhoEDD7-juJGJQb3-rclmYFdalOngyHWFypWZXKakFMyaUszpmBdzaW8fQr4W1lksr1J6Jpr4WFdFTM7z5eowmW0PBtMq5RY6kdwB4VkO1_5m6HJu36F7w3atxHKkxLMk/s320/SOKUJA-Re_Zero_kara_Hajimeru_Isekai_Seikatsu_3rd_Season-10.jpg"/></a></div>-->
+
 
 <!-- [  Post Detail Stream  ] -->
 <script>
 const config = {
     eInfo: {
-        cover: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuAMAmjFZXALBxj5cOHdVAvvoJiDt2SeHBi4Vqc-sZEP64hPg-e6rKPlwEqBTxpJs96-qaHauCmQK-1OLC7gbhFOxh1VkXBj8lbdwYRzZ24dYOOoJ2fteVtdrF9_YWMLFuNGfX6NUTH3wF8MVUjI-OiOXcAqTCW3EDG8MlCoGXP39Ln0q1mV8yqAZCNX8/s640/rezero3.webp',
-        japanese: 'Re:ゼロから始める異世界生活',
-        aired: 'Oct 2, 2024 to ?',
-        duration: '30m',
-        episodes: '12',
-        producers: 'AT-X, Magic Capsule, Memory-Tech, Hakuhodo DY Music & Pictures, Kadokawa, DAXEL',
+        cover: 'LINK_COVER',
+        japanese: 'JAPANESE',
+        aired: 'AIRED',
+        duration: 'DURATION',
+        episodes: 'EPISODES',
+        producers: 'PRODUCERS',
     }
 };
   
   const episodes = [
     {
-        episode: '001',
+        episode: '01',
         servers: [
-            { sub: 'Blogger', value: 'https://www.blogger.com/video.g?token=AD6v5dwssYXq9v95ofveOtleaIuYtDCLs1V91CRKgSqQ47_Ifhv1nB0rHCvgBISRQz-jSimeknMsS1hrPWaewcEWuUc2kGaWSDYEzbJMlOqNoEyTavW4wSwuhsWKZuE1F1L595A1' },
-            { dub: 'Premium 720p', value: 'https://s0.wibufile.com/video/NnBwIs-1-MP4HD-SAMEHADAKU.CARE.mp4' },
-            { dub: 'Premium 1080p', value: 'https://s0.wibufile.com/video/NnBwIs-1-FULLHD-SAMEHADAKU.CARE.mp4' }
+            { sub: 'NAME_SERVER', value: 'LINK' },
+            { dub: 'NAME_SERVER', value: 'LINK' },
+            { dub: 'NAME_SERVER', value: 'LINK' },
         ]
     },
     {
-        episode: '002',
+        episode: '02',
         servers: [
-            { sub: 'Blogger', value: 'https://anodana.com/play/blog.php?url=AD6v5dxPV5kBFZ996P6a6EzbGhcNLZZNpvierHlmDFdPHrcwrQSeLbrSBmBrqpS4XdwJrZNKynGvBBfbrx1RD5iyvJwTwNWP7fJrhcgMfKnXa37tAMGhfZm-6jARZsybVPp5D1YB3bY' },
-            { sub: 'Premium 720p', value: '/' },
-            { sub: 'Premium 1080p', value: '/' }
+            { sub: 'NAME_SERVER', value: 'LINK' },
+            { dub: 'NAME_SERVER', value: 'LINK' },
+            { dub: 'NAME_SERVER', value: 'LINK' },
         ]
     },
-    {
-        episode: '003',
-        servers: [
-            { sub: 'Blogger', value: 'https://anodana.com/play/blog.php?url=AD6v5dxPV5kBFZ996P6a6EzbGhcNLZZNpvierHlmDFdPHrcwrQSeLbrSBmBrqpS4XdwJrZNKynGvBBfbrx1RD5iyvJwTwNWP7fJrhcgMfKnXa37tAMGhfZm-6jARZsybVPp5D1YB3bY' },
-            { sub: 'Premium 720p', value: '/' },
-            { dub: 'Premium 1080p', value: '/' }
-        ]
-    }
     
 ];
 </script>
