@@ -677,37 +677,35 @@ countdown();const timer=setInterval(countdown,1000)})
         {
         &quot;@context&quot;: &quot;https://schema.org&quot;,
         &quot;@type&quot;: &quot;BlogPosting&quot;,
-        &quot;@id&quot;: &quot;<data:post.url.canonical.jsonEscaped/>&quot;,
-        &quot;headline&quot;: &quot;<b:eval expr='&quot;Watch &quot; + data:post.title.jsonEscaped'/>&quot;,
-        &quot;description&quot;: &quot;<b:if cond='data:blog.metaDescription'><b:eval expr='data:blog.metaDescription.jsonEscaped'/><b:else/><b:eval expr='(&quot;Watch &quot; + data:post.title + &quot; Subbed Online. You can download the latest episode of &quot; + data:post.title + &quot; Subbed Online for free on the streaming website &quot; + data:blog.title + &quot;.&quot;).jsonEscaped'/></b:if>&quot;,
-        <b:if cond='data:view.isSingleItem'>&quot;articleBody&quot;: &quot;<b:eval expr='(data:post.body snippet { length: 500, links: false, linebreaks: false, ellipsis: true }).jsonEscaped'/>&quot;,</b:if>
-        &quot;keywords&quot;: &quot; <b:loop values='data:post.labels filter (i =&gt; i.name in data:genre1 or i.name in data:genre2 or i.name in data:genre3)' var='label'><data:label.name/><b:if cond='not data:label.isLast'>, </b:if></b:loop>&quot;,
-        &quot;datePublished&quot;: &quot;<data:post.date.iso8601.jsonEscaped/>&quot;,
-        &quot;dateModified&quot;: &quot;<data:post.lastUpdated.iso8601.jsonEscaped/>&quot;,
-        <b:with value='resizeImage((data:view.featuredImage ?: &quot;https://lh3.googleusercontent.com/ULB6iBuCeTVvSjjjU1A-O8e9ZpVba6uvyhtiWRti_rBAs9yMYOFBujxriJRZ-A=w1200&quot;), 1200, &quot;1200:630&quot;)' var='image'>
-        &quot;image&quot;: {
-        &quot;@type&quot;: &quot;ImageObject&quot;,
-        &quot;url&quot;: &quot;<data:image/>&quot;,
-        &quot;height&quot;: <data:image.height/>,
-        &quot;width&quot;: <data:image.width/>
-        },
-        </b:with>
-        &quot;publisher&quot;: {
-        &quot;@type&quot;: &quot;Organization&quot;,
-        &quot;name&quot;: &quot;Blogger&quot;,
-        &quot;logo&quot;: {
-        &quot;@type&quot;: &quot;ImageObject&quot;,
-        &quot;url&quot;: &quot;https://blogger.googleusercontent.com/img/a/AVvXsEgJBvjfn0ipFH7g05i8AE_qEDmqhVXzfWRXcjuYoS48lB6ZleKgURM3nHSMnczPFlxRGkwBxUo4xJe-W0ozjUXUwgC-pwcJvSWsm3PI9EunZYlSGgdnidY4Aqi5FjSxyPavgk_36BnbaX7dYWKphv9c2AhZjUyFj16ZCR_O8pIiTJM5gK195dHaOfbPnVzh=w600&quot;,
-        &quot;width&quot;: 600,
-        &quot;height&quot;: 133
-        }
-        },
-        &quot;author&quot;: {
-        &quot;@type&quot;: &quot;Person&quot;,
-        &quot;name&quot;: &quot;<data:post.author.name.jsonEscaped/>&quot;,
-        &quot;url&quot;: &quot;<b:if cond='data:post.author.profileUrl'><data:post.author.profileUrl.jsonEscaped/><b:else/><data:blog.homepageUrl.jsonEscaped/></b:if>&quot;,
-        &quot;image&quot;: &quot;<data:post.author.authorPhoto.image.jsonEscaped/>&quot;
-        }
+        &quot;mainEntityOfPage&quot;: {
+            &quot;@type&quot;: &quot;WebPage&quot;,
+            &quot;@id&quot;: &quot;<data:post.url.canonical/>&quot;
+          },
+          &quot;headline&quot;: &quot;<data:post.title.jsonEscaped/>&quot;,
+          &quot;description&quot;: &quot;<b:if cond='data:view.isSingleItem'><b:if cond='data:blog.metaDescription'><b:eval expr='data:blog.metaDescription'/><b:else/><b:eval expr='(data:post.body snippet { length: 150, links: false, linebreaks: false, ellipsis: true }).jsonEscaped'/></b:if><b:else/><b:eval expr='(data:post.body snippet { length: 150, links: false, linebreaks: false, ellipsis: true }).escaped'/></b:if>&quot;,
+          <b:if cond='data:view.isSingleItem'>&quot;articleBody&quot;: &quot;<b:eval expr='(data:post.body snippet { length: 500, links: false, linebreaks: false, ellipsis: true }).jsonEscaped'/>&quot;,</b:if>
+          &quot;datePublished&quot;: &quot;<data:post.date.iso8601.jsonEscaped/>&quot;,
+          &quot;dateModified&quot;: &quot;<data:post.lastUpdated.iso8601.jsonEscaped/>&quot;,
+          &quot;image&quot;: {
+            &quot;@type&quot;: &quot;ImageObject&quot;,
+            &quot;url&quot;: &quot;<b:eval expr='(data:post.featuredImage ? resizeImage(data:post.featuredImage, 1200, &quot;1200:630&quot;) : &quot;https://lh3.googleusercontent.com/ULB6iBuCeTVvSjjjU1A-O8e9ZpVba6uvyhtiWRti_rBAs9yMYOFBujxriJRZ-A=w1200&quot;)'/>&quot;,
+            &quot;height&quot;: <b:eval expr='data:post.featuredImage ? 630 : 348'/>,
+            &quot;width&quot;: 1200
+          },
+          &quot;publisher&quot;: {
+            &quot;@type&quot;: &quot;Organization&quot;,
+            &quot;name&quot;: &quot;Blogger&quot;,
+            &quot;logo&quot;: {
+              &quot;@type&quot;: &quot;ImageObject&quot;,
+              &quot;url&quot;: &quot;https://lh3.googleusercontent.com/ULB6iBuCeTVvSjjjU1A-O8e9ZpVba6uvyhtiWRti_rBAs9yMYOFBujxriJRZ-A=h60&quot;,
+              &quot;width&quot;: 206,
+              &quot;height&quot;: 60
+            }
+          },&quot;author&quot;: {
+            &quot;@type&quot;: &quot;Person&quot;,
+            &quot;url&quot;: &quot;<b:if cond='data:post.author.profileUrl'><data:post.author.profileUrl.jsonEscaped/><b:else/><data:blog.homepageUrl.jsonEscaped/></b:if>&quot;,
+            &quot;name&quot;: &quot;<data:post.author.name.jsonEscaped/>&quot;
+          }
         }
       </script>
       </b:includable>
