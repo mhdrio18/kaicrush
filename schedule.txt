@@ -1,0 +1,171 @@
+<div class='schedule' id='isJadwal' data-label='Ongoing'></div>
+
+<script>
+const isJadwal = {
+    config: {
+        days: (() => {
+            const days = [
+                { full_id: "Minggu", full_en: "Sunday", short: "SUN" },
+                { full_id: "Senin", full_en: "Monday", short: "MON" },
+                { full_id: "Selasa", full_en: "Tuesday", short: "TUE" },
+                { full_id: "Rabu", full_en: "Wednesday", short: "WED" },
+                { full_id: "Kamis", full_en: "Thursday", short: "THU" },
+                { full_id: "Jumat", full_en: "Friday", short: "FRI" },
+                { full_id: "Sabtu", full_en: "Saturday", short: "SAT" }
+            ];
+            const todayIndex = new Date().getDay();
+            return [...days.slice(todayIndex), ...days.slice(0, todayIndex)];
+        })(),
+        site: ""
+    },
+
+    run() {
+        const container = document.getElementById("isJadwal");
+        if (!container) return;
+
+        this.config.site = container.getAttribute("data-label") || "";
+
+        let navHtml = `<div class='schedule-wrap'><div class='schedule-list'><div class='swiper'><div class='swiper-wrapper'>`;
+
+        this.config.days.forEach((day, index) => {
+            let currentDate = new Date();
+            currentDate.setDate(currentDate.getDate() + index);
+            let formattedDate = currentDate.toLocaleDateString('id-ID', { day: '2-digit', month: 'short' });
+
+            navHtml += `<div class='swiper-slide' data-day='${day.full_id}'>
+                            <div class='date-item'>
+                                <span>${day.short}</span>
+                                <div class='date'>${formattedDate}</div>
+                            </div>
+                        </div>`;
+        });
+
+        navHtml += `</div></div>
+            <div class="carousel-controls">
+                <div class="button-next swiper-button-disabled">${this.icon("next")}</div>
+                <div class="button-prev swiper-button-disabled">${this.icon("prev")}</div>
+            </div></div>
+        </div>
+        <div class='s-anime-list' id='jadwalContent'></div>`;
+
+        container.innerHTML = navHtml;
+
+        this.initSwiper();
+        this.initClickEvents();
+        this.setActiveDay();
+        this.fetchData(this.config.days[0].full_id);
+    },
+
+    icon(type) {
+        return `<div class="base-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="${type === 'next' ? 'M9 18L15 12L9 6' : 'M15 18L9 12L15 6'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </div>`;
+    },
+
+    initSwiper() {
+        new Swiper('.schedule-list .swiper', {
+            loop: false,
+            slidesPerView: 5.5,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".button-next",
+                prevEl: ".button-prev",
+            },
+            breakpoints: {
+                1024: { slidesPerView: 5.5 },
+                768: { slidesPerView: 5 },
+                640: { slidesPerView: 3.5 },
+                320: { slidesPerView: 3 },
+                0: { slidesPerView: 1 }
+            }
+        });
+    },
+
+    setActiveDay() {
+        let today = this.config.days[0].full_id;
+        let defaultDay = document.querySelector(`.swiper-slide[data-day="${today}"] .date-item`);
+        defaultDay?.classList.add("active");
+    },
+
+    initClickEvents() {
+        document.querySelectorAll('.swiper-slide').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.swiper-slide .date-item').forEach(el => el.classList.remove('active'));
+                this.querySelector('.date-item').classList.add('active');
+                isJadwal.fetchData(this.dataset.day);
+            });
+        });
+    },
+
+    fetchData(day) {
+        const content = document.getElementById("jadwalContent");
+        if (!content) return;
+
+        content.innerHTML = `<div class="it-blank mt-5"><p>Loading...</p></div>`;
+        let url = `/feeds/posts/summary/-/${this.config.site}?alt=json&max-results=150`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                let now = new Date();
+                let posts = data.feed?.entry?.map(item => ({
+                    title: item.title.$t,
+                    url: item.link.find(link => link.rel === "alternate")?.href || "#",
+                    cat: item.category?.map(category => category.term) || [],
+                    image: item.media$thumbnail?.url || "",
+                    updated: new Date(item.updated.$t)
+                })) || [];
+
+                let filteredPosts = posts.filter(post => (now - post.updated) / (1000 * 60 * 60 * 24) <= 30);
+
+                let dayObj = this.config.days.find(d => d.full_id === day || d.full_en === day);
+                if (!dayObj) return;
+
+                filteredPosts = filteredPosts.filter(post => post.cat.includes(dayObj.full_id) || post.cat.includes(dayObj.full_en));
+
+                content.innerHTML = filteredPosts.length
+                    ? this.create(filteredPosts)
+                    : `<div class="it-blank mt-5"><p>No data to display</p></div>`;
+            })
+            .catch(() => {
+                content.innerHTML = `<p class="error">Error fetching data</p>`;
+            });
+    },
+
+    create(posts) {
+        return posts.map(post => {
+            let episodeLabel = post.cat.find(category => /(Ep|Eps|Episode)\s*\d+/i.test(category)) || "";
+            episodeLabel = episodeLabel.replace(/\bEp\b|\bEps\b/g, "Episode ");
+
+            let timeLabel = post.cat.find(cat => /^\d{2}:\d{2}$/.test(cat));
+            let timeFormatted = timeLabel || new Date(post.updated).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }).replace(/\./g, ':');
+
+            return `<div class="item">
+                <a class="anime-thumbnail" href="${post.url}"><img class="anime-thumbnail-img" src="${post.image}" loading="lazy" alt="${post.title}"></a>
+                <div class="time">${timeFormatted}</div>
+                <div class="content">
+                    <div class="item-head">
+                        <div class="text-sort">
+                            <a title="${post.title}" href="${post.url}">${post.title}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-play">
+                    <a class="btn btn-sm btn-play" href="${post.url}">
+                        <div class="item-flex">
+                            <div class="base-icon icon-14">
+                                <svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 4.9V19.1L19 12Z" fill="currentColor"/></svg>
+                            </div>
+                            <span>${episodeLabel}</span>
+                        </div>
+                    </a>
+                </div>
+            </div>`;
+        }).join('');
+    }
+};
+
+document.addEventListener("DOMContentLoaded", () => isJadwal.run());
+</script>
