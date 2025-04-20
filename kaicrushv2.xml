@@ -716,7 +716,6 @@ countdown();const timer=setInterval(countdown,1000)})
 <b:with value='[&quot;Dub&quot;]' var='checkDub'>
 <b:with value='[&quot;Episode&quot;, &quot;Eps&quot;, &quot;Ep&quot;]' var='checkEpisode'>
 <body id='app' itemscope='itemscope' itemtype='https://schema.org/WebPage'>
-  <b:class cond='data:view.title contains &quot;Watch&quot;' name='app-live'/>
   <b:if cond='data:view.title contains &quot;Player Streaming&quot;'>
     <div id='video-player'/>
     <script>
