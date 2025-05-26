@@ -482,10 +482,9 @@ if(item.classList.contains('active')){document.getElementById('header').style.zI
     </div>
     <div class='watch-func'>
         <div class='func-flex'>
-          <div class='item onoff item-refresh type-button'>
+          <div class='item onoff item-reload type-button' onclick='document.getElementById(&apos;player-iframe&apos;).src += &apos;&apos;;'>
                 <div class='base-icon'><b:include data='{ icon: &quot;reload&quot; }' name='i:svg'/></div>
-                <div class='name'>Refresh</div>
-                <div class='toggle-single'/>
+                <div class='name'>Reload</div>
             </div>
             <div class='item onoff item-light type-button'>
                 <div class='base-icon'><b:include data='{ icon: &quot;focus&quot; }' name='i:svg'/></div>
