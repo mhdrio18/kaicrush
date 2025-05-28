@@ -25,4 +25,4 @@ Template Streaming Anime Blogger
   <img alt="SS" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXFZaLbAwtTV8JwfSb2HMeR6C0GRxO00ou0I4f0tGOf3NvkJshyFFlk8vJJ1h1gIZBkbl892AS0F8Mo_YoQVi5FKQMaMK2UCJl6rcJvYSm0cjYyNdYvfKkuzKjP3CxHMK7-8Jm9fGrZW8L-HfFHqWs6nW8_zzxeze-O8qdI4PXFXo74pzj2PXXZe4TgijT/s542/contoh%20label.png">
 </figure>
 
-<code>Additional</code>: PG-13, PG-14, PG-18
+<code>Additional</code>: PG-13, PG-14, PG-18, ....
