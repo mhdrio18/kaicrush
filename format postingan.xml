@@ -6,6 +6,8 @@
 
 <!-- [  Thumbnail  ] -->
 
+<!-- [  Season List  ] -->
+<div id='season' class='ani-season-body'></div>
 
 <!-- [  Post Detail Stream  ] -->
 <script>
@@ -19,6 +21,12 @@ const config = {
         producers: 'PRODUCERS',
     }
 };
+
+const seasonList = [
+  { title: 'Enen no Shouboutai', season: 'Season 1' },
+  { title: 'Enen no Shouboutai: Ni no Shou', season: 'Season 2' },
+  { title: 'Enen no Shouboutai: San no Shou', season: 'Season 3' },
+];
   
   const episodes = [
     {
