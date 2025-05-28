@@ -18,7 +18,6 @@ Template Streaming Anime Blogger
   <li><code>label</code>: You can replace it with another label</li>
   <li><code>sort</code>: You can replace (published or updated)</li>
   <li><code>num</code>: you can change the number (max post)</li>
-  <li><code>outputscore</code>: don't change it</li>
 </ul>
 
 <h4>Label Example</h4>
