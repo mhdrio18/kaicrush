@@ -35,6 +35,8 @@ const seasonList = [
             { sub: 'NAME_SERVER', value: 'LINK' },
             { dub: 'NAME_SERVER', value: 'LINK' },
             { dub: 'NAME_SERVER', value: 'LINK' },
+            { download: 'Server 1', value: 'LINK' },
+            { download: 'Server 2', value: 'LINK' },
         ]
     },
     {
