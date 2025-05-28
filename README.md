@@ -21,53 +21,6 @@ Template Streaming Anime Blogger
   <li><code>outputscore</code>: don't change it</li>
 </ul>
 
-<h3>Format Post</h3>
-<pre class='html'><code>&lt;!-- [  Sinopsis  ] --&gt;
-&lt;div class=&#039;synopsis&#039;&gt;
-&lt;p&gt;SINOPSIS&lt;/p&gt;
-&lt;/div&gt;
-&lt;span&gt;&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;/span&gt;
-
-&lt;!--[  Thumbnail ]--&gt;
-
-
-&lt;script&gt;
-const schedule = &#039;2025-03-08T23:30:00&#039;;
-const config = {
-    eInfo: {
-        cover: &#039;&#039;,
-        japanese: &#039;JAPANESE&#039;,
-        aired: &#039;AIRED&#039;,
-        duration: &#039;DURATION&#039;,
-        episodes: &#039;MAX_EPISODES&#039;,
-        producers: &#039;PRODUCER&#039;,
-    }
-};
-  
-  const episodes = [
-    {
-        episode: &#039;01&#039;,
-        servers: [
-            { sub: 'NAME_SERVER', value: 'LINK' },
-            { sub: 'NAME_SERVER', value: 'LINK' },
-            { dub: 'NAME_SERVER', value: 'LINK' },
-        ]
-    },
-
-     ADD_EPISODE_HERE 
-    
-];
-&lt;/script&gt;</code>
-</pre>
-<p>if you want to add stream episodes</p>
-<pre><code>{
-        episode: '04',
-        servers: [
-            { sub: 'NAME_SERVER', value: 'LINK' },
-            { sub: 'NAME_SERVER', value: 'LINK' },
-        ]
-    },</code></pre>
-
 <h4>Label Example</h4>
 <figure class="center">
   <img alt="SS" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXFZaLbAwtTV8JwfSb2HMeR6C0GRxO00ou0I4f0tGOf3NvkJshyFFlk8vJJ1h1gIZBkbl892AS0F8Mo_YoQVi5FKQMaMK2UCJl6rcJvYSm0cjYyNdYvfKkuzKjP3CxHMK7-8Jm9fGrZW8L-HfFHqWs6nW8_zzxeze-O8qdI4PXFXo74pzj2PXXZe4TgijT/s542/contoh%20label.png">
