@@ -584,7 +584,7 @@ countdown();const timer=setInterval(countdown,1000)
           </div>
         <div class='stick-play'>Watch now</div>
           <b:with value='resizeImage((data:post.featuredImage ?: &quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhC4E0T1u44pRMxl8VnYoaCCos3sdDsnInzPIz2fKasMVa6QPgp98D4veReXo5TiSYp9TIFy6srOr0us8WY1g-K5Ofjpp_i_7IoVXh7p7U4dkYx087_1xTTt5LbWkyjFeu_m7pqHMVulyj3EHIWH5lkDxvcWdpVwEXXJenNfiBlnHHUM-AGhqxUYSRZW2Gz/s230/noimg.png&quot;), 200, &quot;200:300&quot;)' var='image'>
-          <img class='anime-thumbnail-img' expr:alt='data:post.title' src='data:image' expr:height='data:image.height ?: &quot;300&quot;' expr:width='data:image.width' loading='lazy' src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20180%20254%22%3E%3C/svg%3E'/>
+          <img class='anime-thumbnail-img' expr:alt='data:post.title' expr:src='data:image' expr:height='data:image.height ?: &quot;300&quot;' expr:width='data:image.width' loading='lazy' src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20180%20254%22%3E%3C/svg%3E'/>
           </b:with>
     </a>
     <div class='e-detail'>
